@@ -5,7 +5,6 @@ const myError = (response) => {
 	if (!response.ok) {
 		throw Error('something went wrong...');
 	}
-
 	return response;
 }
 
@@ -27,14 +26,11 @@ const fetchJoke = (str) => {
 			.then(myError)
 			.then(data => data.json())
 			.catch(e => e);
-
 		return (response.message)? console.log(response.message) && false : response
-
 	}
 }
 
 const foo = fetchJoke('https://api.chucknorris.io/jokes/random1');
-
 foo().then((data) => {
 	if(data) console.log(data.value);
 })
